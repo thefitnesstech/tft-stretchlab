@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Free Month at The Fitness Tech — StretchLab Member Offer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+    color: #fff;
+  }
+
+  .hero {
+    background: #000;
+    padding: 52px 24px 44px;
+    text-align: center;
+    border-bottom: 3px solid #FFF100;
+  }
+
+  .partner-badge {
+    display: inline-block;
+    background: #FFF100;
+    color: #000;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(44px, 8vw, 64px);
+    font-weight: 700;
+    line-height: 1.0;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 span { color: #FFF100; }
+
+  .hero-sub {
+    font-size: 16px;
+    color: #aaa;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto 32px;
+  }
+
+  .spots-pill {
+    display: inline-block;
+    border: 1px solid #FFF100;
+    color: #FFF100;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 22px;
+  }
+
+  .form-section {
+    background: #0d0d0d;
+    padding: 44px 24px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .form-inner {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .form-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .form-section .form-desc {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 24px;
+  }
+
+  .name-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .form-inner input {
+    background: #000;
+    border: 1px solid #2a2a2a;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    padding: 14px 16px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .form-inner input::placeholder { color: #444; }
+  .form-inner input:focus { border-color: #FFF100; }
+
+  .field-full { margin-bottom: 12px; }
+
+  .submit-btn {
+    background: #FFF100;
+    color: #000;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    padding: 17px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background 0.15s;
+  }
+
+  .submit-btn:hover { background: #e6d800; }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .fine-print {
+    font-size: 12px;
+    color: #444;
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  .social-proof {
+    padding: 48px 24px;
+    background: #000;
+  }
+
+  .section-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .t-card {
+    display: flex;
+    gap: 20px;
+    border: 1px solid #1a1a1a;
+    padding: 22px;
+    background: #080808;
+    align-items: flex-start;
+  }
+
+  .t-photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid #FFF100;
+    overflow: hidden;
+    background: #1a1a1a;
+  }
+
+  .t-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .t-result {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #FFF100;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .t-quote {
+    font-size: 14px;
+    color: #bbb;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .t-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .t-age {
+    color: #555;
+    font-weight: 400;
+  }
+
+  .about-strip {
+    background: #0d0d0d;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 44px 24px;
+  }
+
+  .about-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .about-strip h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .about-strip p {
+    font-size: 15px;
+    color: #888;
+    line-height: 1.8;
+  }
+
+  .bottom-cta {
+    background: #FFF100;
+    padding: 52px 24px;
+    text-align: center;
+  }
+
+  .bottom-cta h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .bottom-cta p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 24px;
+  }
+
+  .bottom-btn {
+    display: inline-block;
+    background: #000;
+    color: #FFF100;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.15s;
+  }
+
+  .bottom-btn:hover { opacity: 0.85; }
+
+  .footer {
+    background: #000;
+    border-top: 1px solid #1a1a1a;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .logo-box {
+    background: #FFF100;
+    padding: 4px 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 1px;
+  }
+
+  .logo-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .footer-links {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 12px;
+    color: #444;
+  }
+
+  @media (max-width: 480px) {
+    .name-row { grid-template-columns: 1fr; }
+    .t-card { flex-direction: column; }
+    .t-photo { width: 60px; height: 60px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <a href="https://thefitnesstech.com" target="_blank" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:28px;">
+    <div class="logo-box">THE</div>
+    <div class="logo-text">FITNESS TECH</div>
+  </a>
+  <br>
+  <div class="partner-badge">StretchLab × The Fitness Tech</div>
+  <h1>Your first<br><span>30 days</span><br>are on us.</h1>
+  <p class="hero-sub">As a StretchLab member, you're invited to train free at The Fitness Tech for a full month. Small groups, personal attention, no intimidation.</p>
+  <div class="spots-pill">Only 5 spots available</div>
+</section>
+
+<section class="form-section" id="signup">
+  <div class="form-inner">
+    <h2>Claim your free month</h2>
+    <p class="form-desc">Fill this out and we'll be in touch same day.</p>
+    <div class="name-row">
+      <input type="text" id="first_name" placeholder="First name" required />
+      <input type="text" id="last_name" placeholder="Last name" required />
+    </div>
+    <div class="field-full">
+      <input type="email" id="email" placeholder="Email address" required />
+    </div>
+    <div class="field-full">
+      <input type="tel" id="phone" placeholder="Phone number" required />
+    </div>
+    <button class="submit-btn" id="submit-btn" onclick="submitForm()">Claim my spot</button>
+    <p class="fine-print">No contracts. No hidden fees. We'll reach out within a few hours to get you scheduled.</p>
+    <p id="form-msg" style="margin-top:14px;font-size:14px;display:none;"></p>
+  </div>
+</section>
+
+<script>
+async function submitForm() {
+  const first = document.getElementById('first_name').value.trim();
+  const last = document.getElementById('last_name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const msg = document.getElementById('form-msg');
+  const btn = document.getElementById('submit-btn');
+
+  if (!first || !last || !email || !phone) {
+    msg.style.display = 'block';
+    msg.style.color = '#ff4444';
+    msg.textContent = 'Please fill out all fields.';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const res = await fetch('/.netlify/functions/submit-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ firstName: first, lastName: last, email: email, phone: phone })
+    });
+
+    if (res.ok) {
+      btn.style.display = 'none';
+      msg.style.display = 'block';
+      msg.style.color = '#FFF100';
+      msg.style.fontFamily = 'Oswald, sans-serif';
+      msg.style.fontSize = '18px';
+      msg.textContent = "You're in. We'll be in touch today.";
+      document.getElementById('first_name').disabled = true;
+      document.getElementById('last_name').disabled = true;
+      document.getElementById('email').disabled = true;
+      document.getElementById('phone').disabled = true;
+    } else {
+      throw new Error('Server error');
+    }
+  } catch(e) {
+    btn.disabled = false;
+    btn.textContent = 'Claim my spot';
+    msg.style.display = 'block';
+    msg.style.color = '#ff4444';
+    msg.textContent = 'Something went wrong. Please try again.';
+  }
+}
+</script>
+
+<section class="social-proof">
+  <p class="section-label">Real members. Real results.</p>
+  <div class="testimonials">
+
+    <div class="t-card">
+      <div class="t-photo">
+        <img src="christine_c_pic.jpg" alt="Christine" />
+      </div>
+      <div class="t-body">
+        <div class="t-result">Down 15 lbs · Stronger at 50</div>
+        <p class="t-quote">"When I turned 50, I decided I needed a change. After joining TFT I'm down 15 pounds, my arms look more defined, I feel stronger, and climbing stairs doesn't knock the wind out of me anymore."</p>
+        <div class="t-name">Christine <span class="t-age">· 50</span></div>
+      </div>
+    </div>
+
+    <div class="t-card">
+      <div class="t-photo">
+        <img src="alex_c_pic.jpg" alt="Alex" />
+      </div>
+      <div class="t-body">
+        <div class="t-result">Reversed type 2 diabetes · Lost 35 lbs</div>
+        <p class="t-quote">"Before TFT, I didn't have a fitness life. I was dormant and not active at all. I had a wake up call when I was diagnosed with type 2 diabetes. Now I work out 3 days a week, reversed my diabetes, and lost 35 pounds."</p>
+        <div class="t-name">Alex <span class="t-age">· 40</span></div>
+      </div>
+    </div>
+
+    <div class="t-card">
+      <div class="t-photo">
+        <img src="Chris_L_be4_after_pic.jpg" alt="Christopher" />
+      </div>
+      <div class="t-body">
+        <div class="t-result">Down 30 lbs · Most muscle of his life</div>
+        <p class="t-quote">"Before TFT, I felt the most unhealthy I have ever felt. I was at my heaviest weight and had consistently failed at working out. Now I am down 30 pounds and feel excellent about my progress."</p>
+        <div class="t-name">Christopher <span class="t-age">· 42</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="about-strip">
+  <div class="about-inner">
+    <h3>What is The Fitness Tech?</h3>
+    <p>We're a small group personal training gym in South San Francisco, open since 2010. We specialize in training people over 40 who haven't worked out in a while and don't know where to start. No judgment, no pressure, no cookie-cutter programs. We meet you where you are and build from there.</p>
+  </div>
+</section>
+
+<section class="bottom-cta">
+  <h2>5 spots.<br>First come, first served.</h2>
+  <p>This offer is exclusively for StretchLab members.</p>
+  <a href="#signup" class="bottom-btn">Claim my free month</a>
+</section>
+
+<footer class="footer" style="flex-direction: column; gap: 8px;">
+  <a href="https://thefitnesstech.com" target="_blank" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <div class="logo-box">THE</div>
+    <div class="logo-text">FITNESS TECH</div>
+  </a>
+  <div class="footer-links">303 Linden Ave, South San Francisco · info@thefitnesstech.com · (605) 910-3959</div>
+</footer>
+
+</body>
+</html>
